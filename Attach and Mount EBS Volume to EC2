@@ -1,0 +1,12 @@
+First create a Ec2 instance and then a separate EBS volume and attach that volume to EC2 instance , then perform below commands
+
+df -Th
+lsblk
+file -s /dev/xvdf
+mkfs -t xfs /dev/xvdf
+file -s /dev/xvdf
+mkdir -p /apps/volume/my-volume
+cd /apps
+mount /dev/xvdf /apps/volume/my-volume
+df -kh /apps/volume/my-volume
+df -Th /apps/volume/my-volume
